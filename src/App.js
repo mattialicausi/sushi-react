@@ -14,7 +14,7 @@ class App extends Component {
 
   state = {
     cards:[
-      {id: 0, nome: "California", prezzo: 1.99, img: california},
+      {id: 0, nome: "California", prezzo: 1.99, img: california, quantita: 0},
       {id: 1, nome: "Dragon", prezzo: 3.50, img: dragon, quantita: 0},
       {id: 2, nome: "Dynamite", prezzo: 2.99, img: dynamite, quantita: 0},
       {id: 3, nome: "Philadelphia", prezzo: 1.99, img: philadelphia, quantita: 0},
@@ -25,6 +25,14 @@ class App extends Component {
 
   handleDelete = cardId => {
     const cards = this.state.cards.filter(card => card.id !== cardId);
+    this.setState({ cards });
+  }
+
+  handleIncrement = card => {
+    const cards = [...this.state.cards];
+    const id = cards.indexOf(card);
+    cards[id] = {...card};
+    cards[id].quantita ++;
     this.setState({ cards });
   }
 
@@ -41,7 +49,8 @@ class App extends Component {
               <Card
               key= {card.id}
               card ={card} 
-              onDelete={this.handleDelete} />
+              onDelete= {this.handleDelete} 
+              onIncrement= {this.handleIncrement} />
             ))}
          
           </div>
