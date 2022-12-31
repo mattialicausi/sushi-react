@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Card extends Component {
     render() {
         return (
-            <div className="col-4">
+            <div className="col-4 my-2">
                 <div className="card" style={{width: '18rem', textAlign: 'center'}}>
                 <button onClick={()=> this.props.onIncrement(this.props.card)} className="btn btn-primary">
                     Aggiungi <span className="badge bg-light text-black">{this.props.card.quantita}</span>

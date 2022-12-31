@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from './components/navbar';
+import Footer from './components/footer';
 import Card from './components/card';
 
 // importo immagini
@@ -55,6 +56,7 @@ class App extends Component {
          
           </div>
         </div>
+        <Footer />
       </>
       
     );
